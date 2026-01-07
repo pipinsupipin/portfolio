@@ -299,21 +299,12 @@ const events = {
     // Setup mobile menu toggle
     setupMobileMenu() {
         const menuToggle = document.getElementById('menu-toggle');
-        const menuClose = document.getElementById('menu-close');
         const nav = document.getElementById('main-nav');
         const overlay = document.getElementById('nav-overlay');
 
         if (!menuToggle || !nav || !overlay) return;
 
-        // Open menu
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.add('active');
-            nav.classList.add('active');
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        // Close menu
+        // Close menu function
         const closeMenu = () => {
             menuToggle.classList.remove('active');
             nav.classList.remove('active');
@@ -321,10 +312,21 @@ const events = {
             document.body.style.overflow = '';
         };
 
-        if (menuClose) {
-            menuClose.addEventListener('click', closeMenu);
-        }
+        // Toggle menu (open/close)
+        menuToggle.addEventListener('click', () => {
+            const isActive = menuToggle.classList.contains('active');
+            
+            if (isActive) {
+                closeMenu();
+            } else {
+                menuToggle.classList.add('active');
+                nav.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
 
+        // Close when clicking overlay
         overlay.addEventListener('click', closeMenu);
 
         // Close on Escape key
