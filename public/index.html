@@ -16,192 +16,169 @@
         <div class="mesh-gradient"></div> 
 
         <!-- HEADER -->
-        <header class="h-32 px-16 flex justify-between items-center shrink-0 relative z-10">
-            <div class="text-4xl font-medium tracking-tighter border-b border-black pb-1 leading-none cursor-default">
+        <header class="header-main">
+            <div class="logo">
                 kevin<span class="font-extralight">azaria</span>
             </div>
             
-            <nav class="flex gap-8">
-                <div onclick="document.getElementById('journey-section').scrollIntoView({ behavior: 'smooth' })" 
-                    class="cursor-pointer group relative pt-1 min-w-[130px]">
-                    <div class="absolute top-0 left-0 w-full h-[1px] bg-black"></div>
-                    <div class="flex items-center justify-between font-semibold text-[13px] tracking-tight">
+            <!-- Hamburger Button (Mobile Only) -->
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Navigation -->
+            <nav class="nav-main" id="main-nav">
+                <!-- Close Button (Mobile Only) -->
+                <button id="menu-close" class="menu-close" aria-label="Close menu">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <div data-scroll-to="journey-section" class="nav-item group">
+                    <div class="nav-line"></div>
+                    <div class="nav-content">
                         <span>The Journey</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transform rotate-[-45deg] group-hover:rotate-45 transition-transform duration-500 ease-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg class="nav-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                     </div>
-                    <p class="text-[10px] text-gray-400 leading-tight mt-2 group-hover:text-black transition-colors duration-300">
+                    <p class="nav-desc">
                         A glimpse of what I've<br>been up to lately.
                     </p>
                 </div>
             
-                <div onclick="document.getElementById('projects-section').scrollIntoView({ behavior: 'smooth' })" 
-                    class="cursor-pointer group relative pt-1 min-w-[130px]">
-                    <div class="absolute top-0 left-0 w-full h-[1px] bg-black"></div>
-                    <div class="flex items-center justify-between font-semibold text-[13px] tracking-tight">
+                <div data-scroll-to="projects-section" class="nav-item group">
+                    <div class="nav-line"></div>
+                    <div class="nav-content">
                         <span>My Projects</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transform rotate-[-45deg] group-hover:rotate-45 transition-transform duration-500 ease-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg class="nav-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                     </div>
-                    <p class="text-[10px] text-gray-400 leading-tight mt-2 group-hover:text-black transition-colors duration-300">
+                    <p class="nav-desc">
                         Selection of stuff I've<br>built with passion.
                     </p>
                 </div>
             
-                <a id="nav-email-link" href="#" class="block cursor-pointer group relative pt-1 min-w-[130px]">
-                    <div class="absolute top-0 left-0 w-full h-[1px] bg-black"></div>
-                    
-                    <div class="flex items-center justify-between font-semibold text-[13px] tracking-tight">
+                <a id="nav-email-link" href="#" class="nav-item group">
+                    <div class="nav-line"></div>
+                    <div class="nav-content">
                         <span>Contact me</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transform rotate-[-45deg] group-hover:rotate-45 transition-transform duration-500 ease-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg class="nav-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                     </div>
-                    
-                    <p class="text-[10px] text-gray-400 leading-tight mt-2 group-hover:text-black transition-colors duration-300">
-                        kevinfarrel53@gmail.com
-                    </p>
+                    <p class="nav-desc" id="nav-email-text">kevinfarrel53@gmail.com</p>
                 </a>
             </nav>
+
+            <!-- Overlay (Mobile Only) -->
+            <div class="nav-overlay" id="nav-overlay"></div>
         </header>
 
         <!-- MAIN CONTAINER -->
-        <div class="flex flex-1 overflow-hidden px-16 items-stretch relative z-10">
+        <div class="hero-container">
             
             <!-- KIRI -->
-            <div class="w-[50%] flex flex-col justify-center pb-12 pr-10">
+            <div class="hero-left fade-in">
                 <span class="text-4xl mb-2">👋</span>
-                <h1 class="text-[85px] leading-[0.9] tracking-tighter">
+                <h1 class="hero-title">
                     <span class="font-extralight text-gray-800">Hello!</span>
                     <span class="font-extrabold text-black"> I'm Kevin</span>
                 </h1>
                 
-                <div class="flex items-center gap-6 my-8">
+                <div class="hero-divider">
                     <div class="h-[1.5px] w-20 bg-black"></div>
-                    <h2 class="text-4xl font-light tracking-wide text-gray-700 italic">
+                    <h2 class="hero-subtitle">
                         Data & AI Enthusiast<span class="text-black font-bold ml-2">✦</span>
                     </h2>
                 </div>
             
-                <p class="text-sm text-gray-500 max-w-xl leading-relaxed mb-8">
-                    A <span class="text-black font-bold">data storyteller</span>, logic-driven human, and an AI explorer who loves building stuff with <span class="text-black font-bold italic">LLMs</span>. A structured thinker who somehow still enjoys the chaos of messy datasets.
+                <p class="hero-desc">
+                    A <span class="font-bold text-black">data storyteller</span>, logic-driven human, and an AI explorer who loves building stuff with <span class="font-bold italic text-black">LLMs</span>. A structured thinker who somehow still enjoys the chaos of messy datasets.
                 </p>
             
-                <ul class="space-y-3 mb-10">
-                    <li class="flex items-center gap-3 text-sm font-medium text-gray-800">
-                        <div class="flex-shrink-0 w-5 h-5 flex items-center justify-center">
-                            <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                        </div>
+                <ul class="hero-list">
+                    <li class="hero-list-item">
+                        <svg class="checkmark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                        </svg>
                         Analytical & Logical Thinking
                     </li>
-                    <li class="flex items-center gap-3 text-sm font-medium text-gray-800">
-                        <div class="flex-shrink-0 w-5 h-5 flex items-center justify-center">
-                            <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                        </div>
+                    <li class="hero-list-item">
+                        <svg class="checkmark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                        </svg>
                         Logic Over Everything
                     </li>
-                    <li class="flex items-center gap-3 text-sm font-medium text-gray-800">
-                        <div class="flex-shrink-0 w-5 h-5 flex items-center justify-center">
-                            <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                        </div>
+                    <li class="hero-list-item">
+                        <svg class="checkmark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                        </svg>
                         Detail-Oriented Activities
                     </li>
                 </ul>
                 
-                <div class="flex items-center gap-10">
+                <div class="hero-actions">
                     <a id="hero-wa-link" href="#" target="_blank" rel="noopener noreferrer">
-                        <button class="bg-[#151515] text-white px-10 py-4 rounded-full font-bold text-sm tracking-tight transition-all duration-300 hover:scale-105 hover:bg-black hover:shadow-2xl active:scale-95">
-                            Let's Talk
-                        </button>
+                        <button class="btn-primary">Let's Talk</button>
                     </a>
-                    <a href="/assets/CV_Kevin_Azaria.pdf" download="CV_Kevin_Azaria" class="group flex items-center gap-2 font-bold text-sm relative transition-all duration-300">
-                        <span class="border-b border-black pb-0.5 group-hover:text-gray-500 group-hover:border-gray-300 transition-all duration-300">
-                            Download CV
-                        </span>
-                        <div class="overflow-hidden h-5 w-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transform group-hover:translate-y-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                            </svg>
-                        </div>
+                    <a href="/assets/CV_Kevin_Azaria.pdf" download="CV_Kevin_Azaria" class="btn-secondary group">
+                        <span class="btn-secondary-text">Download CV</span>
+                        <svg class="btn-secondary-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
                     </a>
                 </div>
             </div>
         
             <!-- KANAN -->
-            <div class="w-[50%] flex items-end justify-center">
-                <img src="/img/kevin.png" alt="Profile" class="h-full w-auto object-contain">
+            <div class="hero-right fade-in">
+                <img src="/img/kevin.png" alt="Kevin Azaria Profile" class="hero-image">
             </div>
         </div>
 
         <!-- MARQUEE -->
-        <div class="h-20 bg-[#151515] text-white flex items-center overflow-hidden shrink-0 relative z-10">
-            <div class="animate-marquee uppercase text-xl font-bold tracking-[0.2em] flex flex-nowrap whitespace-nowrap">
-                <div class="flex items-center">
-                    <span class="mx-6 text-white">✦</span><span>Data Analysis</span>
-                    <span class="mx-6 text-white">✦</span><span>Machine Learning</span>
-                    <span class="mx-6 text-white">✦</span><span>Flutter Development</span>
-                    <span class="mx-6 text-white">✦</span><span>Web Engineering</span>
-                    <span class="mx-6 text-white">✦</span><span>AI Implementation</span>
-                </div>
-                <div class="flex items-center">
-                    <span class="mx-6 text-white">✦</span><span>Data Analysis</span>
-                    <span class="mx-6 text-white">✦</span><span>Machine Learning</span>
-                    <span class="mx-6 text-white">✦</span><span>Flutter Development</span>
-                    <span class="mx-6 text-white">✦</span><span>Web Engineering</span>
-                    <span class="mx-6 text-white">✦</span><span>AI Implementation</span>
-                </div>
-                <div class="flex items-center">
-                    <span class="mx-6 text-white">✦</span><span>Data Analysis</span>
-                    <span class="mx-6 text-white">✦</span><span>Machine Learning</span>
-                    <span class="mx-6 text-white">✦</span><span>Flutter Development</span>
-                    <span class="mx-6 text-white">✦</span><span>Web Engineering</span>
-                    <span class="mx-6 text-white">✦</span><span>AI Implementation</span>
-                </div>
-            </div>
+        <div class="marquee-container">
+            <div class="marquee-track" id="marquee-content"></div>
         </div>
     </div>
 
-    <!-- SECTION 2 -->
-    <section class="px-6 md:px-16 py-20 bg-white" id="journey-section">
-        <div class="flex items-center gap-4 mb-10">
-            <span class="text-sm font-bold tracking-[0.3em] text-gray-400">THE JOURNEY</span>
-            <div class="h-[1px] flex-1 bg-black/5"></div>
+    <!-- SECTION 2: JOURNEY -->
+    <section class="section-journey" id="journey-section">
+        <div class="section-header">
+            <span class="section-label">THE JOURNEY</span>
+            <div class="section-divider"></div>
         </div>
     
-        <div id="experience-list" class="flex flex-col border-t border-black/10"></div>
+        <div id="experience-list" class="experience-container"></div>
     </section>
 
-    <!-- SECTION 3 -->
-    <section class="section-projects px-6 md:px-16 z-10" id="projects-section">
+    <!-- SECTION 3: PROJECTS -->
+    <section class="section-projects" id="projects-section">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center relative">
-                <span class="text-[10px] font-black tracking-[0.5em] text-gray-400 uppercase">Projects</span>
-                <h2 class="text-5xl font-black uppercase tracking-tighter mt-1">THE BUILD LOG</h2>
-                <div class="w-[1px] h-12 bg-black/10 mx-auto mt-4"></div>
+            <div class="projects-header">
+                <span class="projects-label">Projects</span>
+                <h2 class="projects-title">THE BUILD LOG</h2>
+                <div class="projects-divider"></div>
             </div>
     
             <div id="project-list-container"></div>
     
-            <div class="flex flex-col items-center">
-                <div class="w-[1px] h-12 bg-black/10"></div>
-                <a href="https://github.com/pipinsupipin" target="_blank" class="px-10 py-5 bg-black text-white rounded-full font-black text-xs uppercase tracking-widest hover:scale-105 transition-all flex items-center gap-4 shadow-xl">
+            <div class="projects-footer">
+                <div class="projects-divider"></div>
+                <a href="https://github.com/pipinsupipin" target="_blank" class="btn-github">
                     See More on GitHub
-                    </a>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer id="dynamic-footer" class="footer-slim bg-[#0a0a0a] text-white py-8 px-6 md:px-16 border-t border-white/5">
-    </footer>
+    <footer id="dynamic-footer" class="footer-main"></footer>
 
     <script src="main.js"></script>
 </body>
